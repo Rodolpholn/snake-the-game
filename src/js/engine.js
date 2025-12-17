@@ -3,6 +3,10 @@ function iniciarjogo() {
   for (let i = 1; i < snake.length; i++) {
     if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
       clearInterval(jogo);
+
+      musicaFundo.pause();
+      musicaFundo.currentTime = 0;
+      somLose.play();
       // MOSTRAR POPUP
       const modal = document.getElementById("gameOverModal");
       const finalScoreText = document.getElementById("finalScore");
@@ -35,6 +39,8 @@ function iniciarjogo() {
 
   // Comida
   if (snakeX == food.x && snakeY == food.y) {
+    somComer.play();
+
     food.x = Math.floor(Math.random() * 16) * box;
     food.y = Math.floor(Math.random() * 16) * box;
 

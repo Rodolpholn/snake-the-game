@@ -12,6 +12,7 @@ function startGame() {
   gameContainer.classList.add("game-visible");
 
   // 2. Inicia a lógica técnica
+  musicaFundo.play();
   iniciarNovoCiclo();
 }
 
