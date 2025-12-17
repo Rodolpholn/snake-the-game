@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/button.css" />
     <link rel="stylesheet" href="./src/css/Container.css" />
+    <link rel="stylesheet" href="./src/css/modal.css" />
     <link
       rel="shortcut icon"
       href="./src/img/favicon.ico"
@@ -28,6 +29,17 @@
       <canvas id="snake" width="512" height="512"></canvas>
       <div id="scoreBoard">Score: 0</div>
       <button id="restartButton">Reiniciar Jogo</button>
+
+      <div id="gameOverModal" class="modal hidden">
+        <div class="modal-content">
+          <h1>GAME OVER</h1>
+          <p id="finalScore">Pontos: 0</p>
+          <div class="modal-buttons">
+            <button id="btnRestart">Reiniciar</button>
+            <button id="btnCancel">Cancelar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="./src/js/config.js"></script>

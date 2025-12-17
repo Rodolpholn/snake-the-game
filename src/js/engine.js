@@ -3,9 +3,14 @@ function iniciarjogo() {
   for (let i = 1; i < snake.length; i++) {
     if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
       clearInterval(jogo);
-      alert("Game Over :(");
-      resetAndStartGame();
-      return;
+      // MOSTRAR POPUP
+      const modal = document.getElementById("gameOverModal");
+      const finalScoreText = document.getElementById("finalScore");
+
+      // Mostra a pontuação real baseada no tamanho da cobra
+      finalScoreText.innerHTML = "Pontos: " + (snake.length - 1);
+      modal.classList.remove("hidden");
+      return; // Interrompe a função para não desenhar o próximo passo
     }
   }
 

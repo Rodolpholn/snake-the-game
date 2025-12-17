@@ -39,3 +39,23 @@ startButtonCover.addEventListener("click", startGame);
 
 // Quando clica no botão vermelho de reiniciar
 restartButton.addEventListener("click", iniciarNovoCiclo);
+
+// Adicione ao final do seu button.js
+const modal = document.getElementById("gameOverModal");
+const btnRestart = document.getElementById("btnRestart");
+const btnCancel = document.getElementById("btnCancel");
+
+// Botão REINICIAR do Popup
+btnRestart.addEventListener("click", function () {
+  modal.classList.add("hidden"); // Esconde o popup
+  iniciarNovoCiclo(); // Começa o jogo novamente
+});
+
+// Botão CANCELAR do Popup
+btnCancel.addEventListener("click", function () {
+  modal.classList.add("hidden"); // Esconde o popup
+  gameContainer.classList.add("game-hidden"); // Esconde o jogo
+  gameContainer.classList.remove("game-visible");
+  gameCover.classList.remove("cover-hidden"); // Volta para a capa
+  gameCover.classList.add("cover-visible");
+});
