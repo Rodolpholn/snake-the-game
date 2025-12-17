@@ -1,35 +1,36 @@
 body {
-  font-family: Arial, sans-serif;
   background-color: #ecf0f1;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-}
-h1 {
-  color: #333;
-  text-align: center;
-  margin-top: 20px;
+  font-family: Arial, sans-serif; /* Adicionei uma fonte padrão */
 }
 
-#gameContainer {
+/* Estilos para a capa do jogo */
+#gameCover {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Cria um espaço entre o canvas, score e botão */
-  margin-top: 30px;
+  gap: 30px; /* Espaço entre a imagem e o botão */
+  background-color: #34495e; /* Fundo escuro para a capa */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.5s ease-in-out;
 }
 
-canvas {
-  border: 5px solid #2c3e50; /* Uma borda escura para destacar o campo */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+#gameCover.cover-hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute; /* Esconde de forma que não ocupe espaço */
 }
 
-#scoreBoard {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2c3e50;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+#gameCover img {
+  max-width: 80%; /* Ajusta o tamanho da imagem da capa */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
