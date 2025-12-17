@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ecf0f1;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Cria um espaço entre o canvas, score e botão */
+  margin-top: 30px;
+}
+
+canvas {
+  border: 5px solid #2c3e50; /* Uma borda escura para destacar o campo */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+#scoreBoard {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

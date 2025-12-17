@@ -1,0 +1,26 @@
+#startButton {
+  background-color: #27ae60; /* Verde esmeralda */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px; /* Bordas arredondadas */
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* Animação suave */
+  box-shadow: 0 4px #1e8449; /* Sombra que dá profundidade */
+}
+
+/* Efeito ao passar o mouse */
+#startButton:hover {
+  background-color: #2ecc71;
+  transform: translateY(-2px); /* Sobe levemente */
+  box-shadow: 0 6px #1e8449;
+}
+
+/* Efeito ao clicar */
+#startButton:active {
+  transform: translateY(2px); /* Abaixa ao clicar */
+  box-shadow: 0 2px #1e8449;
+}

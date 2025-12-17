@@ -3,15 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/button.css" />
+    <link
+      rel="shortcut icon"
+      href="./src/img/favicon.ico"
+      type="image/x-icon"
+    />
     <title>Snake Game</title>
   </head>
+
   <body>
     <div id="gameContainer">
       <canvas id="snake" width="512" height="512"></canvas>
       <div id="scoreBoard">Score: 0</div>
-      <button id="startButton">Start Game</button>
+      <button id="startButton">Iniciar Jogo</button>
     </div>
   </body>
+
+  <script src="./src/js/config.js"></script>
+  <script src="./src/js/draw.js"></script>
+  <script src="./src/js/input.js"></script>
+  <script src="./src/js/engine.js"></script>
+  <script src="./src/js/button.js"></script>
 </html>
