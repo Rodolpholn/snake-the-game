@@ -78,6 +78,16 @@ function iniciarjogo() {
   if (direction == "up") snakeY -= box;
   if (direction == "down") snakeY += box;
 
+  //função para a cobrinha comer a comida
+  if (snakeX == food.x && snakeY == food.y) {
+    //gerar nova comida em posição aleatória
+    food.x = Math.floor(Math.random() * 15 + 1) * box;
+    food.y = Math.floor(Math.random() * 15 + 1) * box;
+  } else {
+    //remover a cauda da cobrinha
+    snake.pop();
+  }
+
   //remover a cauda da cobrinha
   snake.pop();
 
