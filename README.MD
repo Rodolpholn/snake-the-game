@@ -23,6 +23,7 @@ HTML5: Estrutura e Canvas para renderização do jogo.
 CSS3: Estilização avançada, Flexbox, animações e efeitos neon.
 
 JavaScript (ES6+): Lógica do motor do jogo, manipulação de DOM e persistência de dados.
+![alt text](image.png)
 
 ## Como Jogar 🎮
 
