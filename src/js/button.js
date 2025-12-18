@@ -48,10 +48,12 @@ function iniciarNovoCiclo() {
   // Reseta os dados e inicia um novo ciclo do jogo
   if (typeof jogo !== "undefined") clearInterval(jogo); // Limpa o loop anterior, se existir
 
+  nivel = 1; // Volta ao nível 1
+  velocidade = 100; // Volta à velocidade inicial
   configurarJogo(); // Reseta posição da cobra (config.js)
 
   // Inicia o loop (engine.js)
-  jogo = setInterval(iniciarjogo, 100);
+  jogo = setInterval(iniciarjogo, velocidade);
 
   // Desenha o estado inicial para não ficar em branco
   criarBG(); // Cria o fundo

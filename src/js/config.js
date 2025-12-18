@@ -6,6 +6,8 @@ var snake = []; // Array que representa a cobra
 var direction = "right"; // Direção inicial da cobra
 var food = {}; // Objeto que representa a comida
 var jogo; // Variável para o loop do jogo
+var velocidade = 100; // Velocidade inicial
+var nivel = 1; // Nível inicial
 
 // Configurações iniciais do jogo
 function configurarJogo() {

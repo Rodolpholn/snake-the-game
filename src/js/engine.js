@@ -49,9 +49,27 @@ function iniciarjogo() {
 
     let score = snake.length; // Calcula a pontuação baseada no tamanho da cobra
     document.getElementById("scoreBoard").innerHTML = "Score: " + score; // Atualiza o placar
+    // --- LÓGICA DE DIFICULDADE PROGRESSIVA ---
+    if (score % 10 === 0) {
+      // A cada 10 pontos
+      evoluirJogo();
+    }
   } else {
     snake.pop(); // Remove o último quadrado da cobra
   }
+
+  // Função para evoluir o jogo
+  function evoluirJogo() {
+    nivel++;
+    // Diminui o tempo do intervalo (mínimo de 30ms para não ficar impossível)
+    velocidade = Math.max(30, velocidade - 10);
+
+    // Reinicia o intervalo com a nova velocidade
+    clearInterval(jogo);
+    jogo = setInterval(iniciarjogo, velocidade);
+
+    console.log("Nível: " + nivel + " | Velocidade: " + velocidade + "ms");
+  } // Fim da função evoluirJogo
 
   let newHead = { x: snakeX, y: snakeY }; // Cria a nova cabeça da cobra
   snake.unshift(newHead); // Adiciona a nova cabeça no início do array
