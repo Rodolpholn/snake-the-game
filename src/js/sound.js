@@ -15,3 +15,7 @@ var somComer = new Audio("./src/sound/crunch.mp3");
 // som quando perde
 var somLose = new Audio("./src/sound/lose.mp3");
 somLose.volume = 0.7; // Volume para ser bem nítido
+
+// som quando ganha
+var somEvolucao = new Audio("./src/sound/level-up.mp3"); // Escolha um som de "conquista" ou "levelup"
+somEvolucao.volume = 0.6; // Volume moderado para não ser muito alto

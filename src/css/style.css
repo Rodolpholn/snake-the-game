@@ -46,7 +46,19 @@ body {
   text-align: center;
 }
 
-.menu-buttons {
-  display: flex;
-  gap: 10px;
+/* No seu style.css */
+@keyframes flash-evolucao {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(2) saturate(1.5);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.efeito-evolucao {
+  animation: flash-evolucao 0.5s ease-out;
 }

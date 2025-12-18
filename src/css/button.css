@@ -112,3 +112,8 @@
 .volume-icon:hover {
   transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
 }
+
+.menu-buttons {
+  display: flex;
+  gap: 10px;
+}

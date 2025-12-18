@@ -68,6 +68,22 @@ function iniciarjogo() {
     // Diminui o tempo do intervalo (mínimo de 30ms para não ficar impossível)
     velocidade = Math.max(30, velocidade - 10);
 
+    // --- ATUALIZA O DISPLAY DE NÍVEL NA TELA ---
+    const levelDisplay = document.getElementById("levelDisplay");
+    if (levelDisplay) {
+      levelDisplay.innerHTML = "Nível: " + nivel;
+    }
+
+    somEvolucao.play();
+
+    // Adiciona a classe de animação ao canvas
+    const canvasElement = document.getElementById("snake");
+    canvasElement.classList.add("efeito-evolucao");
+
+    // Remove a classe após a animação acabar (0.5s) para poder usar de novo
+    setTimeout(() => {
+      canvasElement.classList.remove("efeito-evolucao");
+    }, 500);
     // Reinicia o intervalo com a nova velocidade
     clearInterval(jogo);
     jogo = setInterval(iniciarjogo, velocidade);
@@ -92,3 +108,5 @@ function salvarPlacar(nome, pontos) {
 
   localStorage.setItem("ranking", JSON.stringify(ranking));
 }
+
+// Função para evoluir o jogo com efeito sonoro e visual

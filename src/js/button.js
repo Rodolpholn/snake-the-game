@@ -63,7 +63,7 @@ function iniciarNovoCiclo() {
   nivel = 1; // Volta ao nível 1
   velocidade = 100; // Volta à velocidade inicial
   configurarJogo(); // Reseta posição da cobra (config.js)
-
+  document.getElementById("levelDisplay").innerHTML = "Nível: 1";
   // Inicia o loop (engine.js)
   jogo = setInterval(iniciarjogo, velocidade);
 

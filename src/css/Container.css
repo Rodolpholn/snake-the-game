@@ -34,3 +34,12 @@ canvas {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+#levelDisplay {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  color: #ff00ff; /* Rosa Neon */
+  text-shadow: 0 0 10px #ff00ff;
+  font-weight: bold;
+  margin: 5px 0;
+}
