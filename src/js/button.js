@@ -4,6 +4,10 @@ const startButtonCover = document.getElementById("startButtonCover"); // Botão 
 const gameContainer = document.getElementById("gameContainer"); // Container do jogo
 const restartButton = document.getElementById("restartButton"); // Botão vermelho de reiniciar
 const volumeIcon = document.getElementById("volumeIcon"); // Ícone de volume
+const btnShowScore = document.getElementById("btnShowScore"); // Botão de mostrar placar
+const btnCloseScore = document.getElementById("btnCloseScore"); // Botão de fechar placar
+const scoreModal = document.getElementById("scoreModal"); //  Modal de placar
+const rankingList = document.getElementById("rankingList"); // Lista de ranking
 let isMuted = true; // Começa mutado por padrão
 
 // --- Lógica do Botão de Volume ---
@@ -24,7 +28,15 @@ volumeIcon.addEventListener("click", () => {
 
 // --- Função Principal para Iniciar o Jogo ---
 function startGame() {
+  const nomeInput = document.getElementById("playerName");
+  const nome = nomeInput ? nomeInput.value.trim() : "";
+
+  if (nome === "") {
+    alert("Ei! Digite seu nome para entrar no Ranking!");
+    return; // Para aqui se não tiver nome
+  }
   // 1. Troca as telas usando as classes do seu CSS
+
   gameCover.classList.add("cover-hidden"); // Esconde a capa
   gameContainer.classList.remove("game-hidden"); // Mostra o jogo
   gameContainer.classList.add("game-visible"); // Anima a entrada do jogo
@@ -98,3 +110,32 @@ btnCancel.addEventListener("click", function () {
     musicaMenu.play(); // Toca a música do menu
   }
 });
+
+// Lógica do Botão de Mostrar Placar
+btnShowScore.addEventListener("click", () => {
+  const ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+  const rankingList = document.getElementById("rankingList");
+
+  if (ranking.length === 0) {
+    rankingList.innerHTML = "<p>Nenhum recorde ainda!</p>";
+  } else {
+    // Cria a lista de nomes e pontos
+    rankingList.innerHTML = ranking
+      .map(
+        (item, index) =>
+          `<p>${index + 1}º ${item.nome.toUpperCase()} - ${item.pontos}</p>`
+      )
+      .join("");
+  }
+
+  scoreModal.classList.remove("hidden");
+});
+
+if (btnCloseScore) {
+  btnCloseScore.addEventListener("click", () => {
+    scoreModal.classList.add("hidden");
+  });
+}
+document
+  .getElementById("startButtonCover")
+  .addEventListener("click", startGame);

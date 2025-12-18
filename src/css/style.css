@@ -35,3 +35,18 @@ body {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+#playerName {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #00f2ff;
+  background: #1a1a2e;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 10px;
+}

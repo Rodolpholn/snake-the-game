@@ -5,6 +5,10 @@ function iniciarjogo() {
     if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
       clearInterval(jogo); // Para o loop do jogo
 
+      // Salva o placar antes de mostrar o popup
+      const nomeDoJogador = document.getElementById("playerName").value;
+      const pontuacaoFinal = snake.length - 1; // Subtraímos 1 porque a cobra começa com tamanho 1
+      salvarPlacar(nomeDoJogador, pontuacaoFinal);
       // Áudio de game over
       musicaFundo.pause();
       musicaFundo.currentTime = 0; // Reseta a música
@@ -14,7 +18,7 @@ function iniciarjogo() {
       const finalScoreText = document.getElementById("finalScore"); // Texto de pontuação final
 
       // Mostra a pontuação real baseada no tamanho da cobra
-      finalScoreText.innerHTML = "Pontos: " + (snake.length - 1); // Subtrai 1 para não contar o bloco inicial
+      finalScoreText.innerHTML = nomeDoJogador + " Pontos: " + pontuacaoFinal; // Subtrai 1 para não contar o bloco inicial
       modal.classList.remove("hidden"); // Mostra o popup de game over
       return; // Interrompe a função para não desenhar o próximo passo
     }
@@ -73,4 +77,18 @@ function iniciarjogo() {
 
   let newHead = { x: snakeX, y: snakeY }; // Cria a nova cabeça da cobra
   snake.unshift(newHead); // Adiciona a nova cabeça no início do array
+}
+
+// Salva o placar no localStorage
+function salvarPlacar(nome, pontos) {
+  let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+
+  // Adiciona o novo score
+  ranking.push({ nome: nome, pontos: pontos });
+
+  // Ordena do maior para o menor e pega os 5 melhores
+  ranking.sort((a, b) => b.pontos - a.pontos);
+  ranking = ranking.slice(0, 5);
+
+  localStorage.setItem("ranking", JSON.stringify(ranking));
 }

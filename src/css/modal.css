@@ -64,3 +64,36 @@
   max-width: 90%; /* Responsivo para telas menores */
   position: relative;
 }
+
+.ranking-container {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  min-width: 250px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between; /* Nome na esquerda, pontos na direita */
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+  color: #4de8b2; /* Verde neon */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.ranking-item:last-child {
+  border-bottom: none;
+}
+
+.ranking-item .rank-pos {
+  color: #ff00ff; /* Rosa para a posição (1º, 2º...) */
+  margin-right: 10px;
+}
+
+.ranking-item .player-score {
+  color: #fff;
+  font-weight: bold;
+}

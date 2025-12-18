@@ -39,7 +39,10 @@
       />
 
       <!-- Botão para iniciar o jogo -->
+       <input type="text" id="playerName" placeholder="Digite seu nome..." maxlength="10">
+       
       <button id="startButtonCover">Iniciar Jogo</button>
+      <button id="btnShowScore">Score</button> </div>
 
       <!-- Ícone de controle de volume -->
       <img
@@ -49,6 +52,22 @@
         class="volume-icon"
       />
     </div>
+
+    <!-- Modal de Ranking -->
+    <div id="scoreModal" class="modal hidden">
+    <div class="monitor-frame">
+        <div class="screen-effect"></div>
+        <div class="modal-content retro-style">
+            <h2 class="glitch-text">TOP 5 RANKING</h2>
+            
+            <div id="rankingList" class="ranking-container">
+                </div>
+            
+            <button id="btnCloseScore" class="btn-retro btn-red">FECHAR</button>
+        </div>
+        <div class="monitor-light"></div>
+    </div>
+</div>
 
     <!-- Contêiner do Jogo -->
     <div id="gameContainer" class="game-hidden">
@@ -71,6 +90,7 @@
         </div>
       </div>
     </div>
+
 
     <!--  Scripts JavaScript  -->
 
