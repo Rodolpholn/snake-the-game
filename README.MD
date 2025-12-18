@@ -2,6 +2,8 @@
 
 Este é um projeto de Snake Game (Jogo da Cobrinha) moderno com estética Retro-Cyberpunk, desenvolvido puramente com tecnologias web. O jogo conta com sistema de níveis progressivos, trilha sonora dinâmica e ranking local de recordes.
 
+> 🎮 **[CLIQUE AQUI PARA JOGAR AGORA!](https://rodolpholn.github.io/snake-the-game/)**
+
 ## Funcionalidades 🚀
 
 Dificuldade Progressiva: O jogo possui 10 níveis de velocidade. A cada 10 pontos, a cobra evolui e o jogo fica mais rápido.
