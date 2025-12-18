@@ -100,3 +100,40 @@ function downFood() {
   // Reseta o brilho para não afetar outros desenhos
   context.shadowBlur = 0;
 }
+
+// Sistema de partículas para efeitos visuais ao comer a comida
+
+function criarParticulas(x, y, cor) {
+  // Criamos 10 pedacinhos
+  for (let i = 0; i < 10; i++) {
+    particulas.push({
+      x: x + box / 2,
+      y: y + box / 2,
+      velX: (Math.random() - 0.5) * 8, // Velocidade aleatória
+      velY: (Math.random() - 0.5) * 8,
+      vida: 1.0,
+      cor: cor,
+    });
+  }
+}
+
+function atualizarEDesenharParticulas() {
+  context.save(); // SALVA o estado do pincel (importante!)
+
+  for (let i = particulas.length - 1; i >= 0; i--) {
+    let p = particulas[i];
+    p.x += p.velX;
+    p.y += p.velY;
+    p.vida -= 0.05; // Diminui a vida
+
+    if (p.vida <= 0) {
+      particulas.splice(i, 1); // Remove se morreu
+    } else {
+      context.globalAlpha = p.vida; // Fica transparente
+      context.fillStyle = p.cor;
+      context.fillRect(p.x, p.y, 4, 4); // Desenha o pixel
+    }
+  }
+
+  context.restore(); // RESTAURA o pincel ao normal
+}

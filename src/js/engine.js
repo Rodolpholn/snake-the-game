@@ -17,15 +17,25 @@ function iniciarjogo() {
       const modal = document.getElementById("gameOverModal"); // Popup de game over
       const finalScoreText = document.getElementById("finalScore"); // Texto de pontuação final
 
+      if (
+        typeof atualizarEDesenharParticulas === "function" &&
+        particulas.length > 0
+      ) {
+        atualizarEDesenharParticulas();
+      }
+
       // Mostra a pontuação real baseada no tamanho da cobra
       finalScoreText.innerHTML = nomeDoJogador + " Pontos: " + pontuacaoFinal; // Subtrai 1 para não contar o bloco inicial
       modal.classList.remove("hidden"); // Mostra o popup de game over
+
       return; // Interrompe a função para não desenhar o próximo passo
     }
   }
 
   // Desenho
+  // Atualiza e desenha partículas
   criarBG(); // Cria o fundo
+  atualizarEDesenharParticulas();
   criarCobrinha(); // Desenha a cobrinha
   downFood(); // Desenha a comida
 
@@ -45,6 +55,7 @@ function iniciarjogo() {
 
   // Comida
   if (snakeX == food.x && snakeY == food.y) {
+    criarParticulas(food.x, food.y, "#ff4757");
     // Se a cobra comer a comida
     somComer.play(); // Toca o som de comer
 

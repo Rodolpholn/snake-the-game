@@ -8,6 +8,7 @@ var food = {}; // Objeto que representa a comida
 var jogo; // Variável para o loop do jogo
 var velocidade = 100; // Velocidade inicial
 var nivel = 1; // Nível inicial
+var particulas = [];
 
 // Configurações iniciais do jogo
 function configurarJogo() {

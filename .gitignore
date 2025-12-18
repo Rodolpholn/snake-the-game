@@ -1,0 +1,11 @@
+# Pastas de sistema e editores
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Se você usar algum servidor local futuramente
+node_modules/
+dist/
+
+# Logs de erro
+*.log
