@@ -39,7 +39,7 @@ Use as setas do teclado para controlar a cobra.
 
 Coma as frutas para crescer, ganhar pontos e subir de nível.
 
-Cuidado: Não bata nas paredes nem no próprio corpo!
+Cuidado: ao atravessar as paredes para não bater no próprio corpo!
 
 ## Estrutura do Projeto 📂
 
