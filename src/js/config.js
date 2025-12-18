@@ -1,24 +1,27 @@
-var canvas = document.getElementById("snake");
-var context = canvas.getContext("2d");
-var box = 32;
+// Variáveis do jogo
+var canvas = document.getElementById("snake"); // Canvas do jogo
+var context = canvas.getContext("2d"); // Contexto 2D do canvas
+var box = 32; // Tamanho de cada "quadrado" do jogo
+var snake = []; // Array que representa a cobra
+var direction = "right"; // Direção inicial da cobra
+var food = {}; // Objeto que representa a comida
+var jogo; // Variável para o loop do jogo
 
-var snake = [];
-var direction = "right";
-var food = {};
-var jogo; // Variável para o setInterval
-
+// Configurações iniciais do jogo
 function configurarJogo() {
-  snake = [];
-  snake[0] = { x: 8 * box, y: 8 * box };
-  direction = "right";
+  // Reseta posição da cobra e comida
+  snake = []; // Reseta a cobra
+  snake[0] = { x: 8 * box, y: 8 * box }; // Posição inicial da cobra no centro do canvas
+  direction = "right"; // Direção inicial da cobra
   food = {
-    x: Math.floor(Math.random() * 16) * box,
-    y: Math.floor(Math.random() * 16) * box,
+    x: Math.floor(Math.random() * 16) * box, // Posição aleatória da comida no eixo X
+    y: Math.floor(Math.random() * 16) * box, // Posição aleatória da comida no eixo Y
   };
 }
 
-// Adicione isso no final do config.js para o campo aparecer vazio ao carregar
+// Desenha o fundo do jogo
 window.onload = function () {
-  context.fillStyle = "lightgreen";
-  context.fillRect(0, 0, 16 * box, 16 * box);
+  // Função para desenhar o fundo
+  context.fillStyle = "lightgreen"; // Cor do fundo
+  context.fillRect(0, 0, 16 * box, 16 * box); // Desenha o retângulo do fundo
 };

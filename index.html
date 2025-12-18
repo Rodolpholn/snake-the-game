@@ -3,28 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Estilos Globais -->
     <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- Estilos do Botão -->
     <link rel="stylesheet" href="./src/css/button.css" />
+    <!-- Estilos do Contêiner -->
     <link rel="stylesheet" href="./src/css/Container.css" />
+    <!-- Estilos do Modal -->
     <link rel="stylesheet" href="./src/css/modal.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="./src/img/favicon.ico"
       type="image/x-icon"
     />
+    <!-- Título da Página -->
     <title>Snake Game</title>
   </head>
 
   <body>
+    <!-- Contêiner da Capa do Jogo -->
     <div id="gameCover" class="cover-visible">
       <img
         id="coverImage"
         src="./src/img/snake.jpg"
         alt="Capa do Jogo da Cobrinha"
       />
+
+      <!-- Botão para iniciar o jogo -->
       <button id="startButtonCover">Iniciar Jogo</button>
+
+      <!-- Ícone de controle de volume -->
+      <img
+        id="volumeIcon"
+        src="./src/img/volume-off.png"
+        alt="Controle de Volume"
+        class="volume-icon"
+      />
     </div>
 
+    <!-- Contêiner do Jogo -->
     <div id="gameContainer" class="game-hidden">
       <canvas id="snake" width="512" height="512"></canvas>
       <div id="scoreBoard">Score: 0</div>
@@ -36,18 +62,29 @@
           <h1>GAME OVER</h1>
           <p id="finalScore">Pontos: 0</p>
           <div class="modal-buttons">
+            <!-- Botões do Modal -->
+            <!-- Botão para reiniciar o jogo -->
             <button id="btnRestart">Reiniciar</button>
+            <!-- Botão para fechar o modal -->
             <button id="btnCancel">Cancelar</button>
           </div>
         </div>
       </div>
     </div>
 
+    <!--  Scripts JavaScript  -->
+
+    <!-- Arquivo de Configurações -->
     <script src="./src/js/config.js"></script>
+    <!-- Arquivo de Desenho -->
     <script src="./src/js/draw.js"></script>
+    <!-- Arquivo de Entrada do Usuário -->
     <script src="./src/js/input.js"></script>
+    <!-- Arquivo da Lógica do Jogo -->
     <script src="./src/js/engine.js"></script>
+    <!-- Arquivo do Botão -->
     <script src="./src/js/button.js"></script>
+    <!-- Arquivo de Som -->
     <script src="./src/js/sound.js"></script>
   </body>
 </html>

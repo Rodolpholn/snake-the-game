@@ -60,3 +60,28 @@
   transform: translateY(1px);
   box-shadow: 0 2px #a02d20;
 }
+
+.volume-icon {
+  position: absolute; /* Para posicionar em relação à #gameCover */
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  /* Remove fundo, bordas e sombras */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  /* Garante que a imagem não tenha filtros */
+  filter: none !important;
+
+  transition: transform 0.2s ease-in-out;
+  z-index: 110; /* Garante que fique acima de outros elementos */
+}
+
+.volume-icon:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
