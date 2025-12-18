@@ -46,11 +46,17 @@ Cuidado: ao atravessar as paredes para não bater no próprio corpo!
 Plaintext
 
 ├── index.html # Página principal
+
 ├── src/
+
 │ ├── css/ # Arquivos de estilo (style.css, modal.css, etc)
+
 │ ├── js/ # Lógica (config.js, engine.js, draw.js, button.js)
+
 │ ├── img/ # Imagens de fundo e ícones
+
 │ └── audio/ # Músicas e efeitos sonoros
+
 └── README.md # Documentação do projeto
 
 ## Autor 📝
